@@ -1,0 +1,46 @@
+-- Create Parking Rates Table
+CREATE TABLE ParkingRates (
+    RateID INT PRIMARY KEY,
+    Location VARCHAR(255) UNIQUE,
+    HourlyRate DECIMAL(5, 2) NOT NULL,
+    DailyRate DECIMAL(7, 2) NOT NULL
+);
+
+-- Create Payment Method Table
+CREATE TABLE PaymentMethod (
+    PaymentMethodID INT PRIMARY KEY,
+    Method VARCHAR(50) NOT NULL
+);
+
+-- Create enhanced Owner Table with more details
+CREATE TABLE Owner (
+    OwnerID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    ContactInformation VARCHAR(255),
+    Address VARCHAR(255),
+    DateOfBirth DATE,
+    UNIQUE (ContactInformation) -- Unique contact info
+);
+
+-- Create Vehicle Table with additional details
+CREATE TABLE Vehicle (
+    VehicleID INT PRIMARY KEY,
+    OwnerID INT,
+    Make VARCHAR(255),
+    Model VARCHAR(255),
+    LicensePlate VARCHAR(20) UNIQUE,
+    Year INT,
+    Color VARCHAR(50),
+    FOREIGN KEY (OwnerID) REFERENCES Owner(OwnerID)
+);
+
+-- Create Transaction Table with Payment Method
+CREATE TABLE TransactionTable (
+    TransactionID INT PRIMARY KEY,
+    ReservationID INT,
+    Amount DECIMAL(10, 2),
+    PaymentMethodID INT,
+    Date DATETIME,
+    FOREIGN KEY (ReservationID) REFERENCES Reservation(ReservationID),
+    FOREIGN KEY (PaymentMethodID) REFERENCES PaymentMethod(PaymentMethodID)
+);
