@@ -1,19 +1,27 @@
-#Parking Reservation System
+# Parking Reservation System
 
-Overview
-The Parking Reservation System is a robust SQL-based solution designed to manage parking spaces, vehicle reservations, and transactions. This project aims to streamline the parking reservation process, enabling users to reserve spaces efficiently and track their transactions seamlessly.
+## Description
 
-Features
-Parking Space Management: Easily manage parking space details, including status (Free/Paid) and availability.
-Owner and Vehicle Records: Store and manage information about vehicle owners and their vehicles.
-Reservation Handling: Create and manage parking reservations with specified time slots.
-Transaction Tracking: Record and track payment transactions associated with reservations.
-Data Integrity: Ensure data accuracy and consistency through constraints and checks.
-Database Structure
-The database includes the following tables:
+The **Parking Reservation System** is a comprehensive database solution designed to manage parking spaces, vehicle reservations, transactions, and user profiles. This system enables users to reserve parking spaces, track transactions, and manage vehicle information seamlessly. Built using SQL, the system incorporates various advanced features, including payment methods, parking rates, and data integrity checks.
 
-ParkingSpace: Information on parking locations and their statuses.
-Owner: Details of vehicle owners.
-Vehicle: Information about vehicles and their owners.
-Reservation: Records of parking reservations.
-TransactionTable: Logs of payment transactions related to reservations.
+## Features
+
+- **Parking Space Management**: Maintain a list of parking spaces with their statuses (Free/Paid) and availability.
+- **Owner Management**: Keep track of vehicle owners with detailed information including contact details and addresses.
+- **Vehicle Management**: Store vehicle details such as make, model, year, and license plate.
+- **Reservation System**: Allow users to create and manage parking reservations with specified start and end times.
+- **Transaction Tracking**: Record payment transactions linked to reservations, including payment methods.
+- **Dynamic Parking Rates**: Manage parking rates based on location and time, allowing for flexible pricing models.
+- **Data Integrity**: Implement checks and constraints to maintain data consistency and accuracy.
+
+## Database Structure
+
+The database consists of the following tables:
+
+- **ParkingSpace**: Stores information about parking locations, status, and availability.
+- **Owner**: Contains details about vehicle owners.
+- **Vehicle**: Holds information about vehicles, including owner references.
+- **Reservation**: Manages reservations made by vehicle owners for parking spaces.
+- **TransactionTable**: Records payment transactions linked to reservations.
+- **PaymentMethod**: Details the different payment methods available.
+- **ParkingRates**: Maintains parking rates based on location.
